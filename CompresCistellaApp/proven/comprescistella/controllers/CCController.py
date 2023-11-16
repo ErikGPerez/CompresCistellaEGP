@@ -1,9 +1,9 @@
-from CompresCistellaApp.proven.comprescistella.views.CCView import CCView
-from CompresCistellaApp.proven.comprescistella.model.CCModel import CCMenu
+from proven.comprescistella.views.CCView import CCView
+from proven.comprescistella.model.CCModel import CCModel
 
 class CCController:
     
-    def __init__(self, model: CCMenu):
+    def __init__(self, model: CCModel):
         self.model = model
         self.view = CCView(self, self.model)
         self.view.display()
@@ -19,14 +19,12 @@ class CCController:
         else:
             if action == "exit":
                 self.exitApplication()
-            if action == "crear_fitxer":
-                self.crearFitxer()
-            if action == "llegir_fitxer":
-                self.llegirFitxer()
-            if action == "escriure_fitxer":
-                self.escriureFitxer()
-            if action == "esborrar_fitxer":
-                self.esborrarFitxer()
+            if action == "comprar_producte":
+                self.compraProducte()
+            if action == "mostrar_cistella":
+                self.mostraCistella()
+            if action == "generar_factura":
+                self.generaFactura()
             if action == "wrong_action":
                 print("Wrong option")
     
@@ -35,6 +33,18 @@ class CCController:
         """
         quit()
         
+    def compraProducte(self):
+        self.view.showMessage("NOT IMPLEMENTED compra") #TODO
+        self.model.prova()
+        
+    
+    def mostraCistella(self):
+        self.view.showMessage("NOT IMPLEMENTED cistella") #TODO
+    
+    def generaFactura(self):
+        self.view.showMessage("NOT IMPLEMENTED genera") #TODO
+    
+    ############################# OTHER ACTIVITY - CRUD #######################
     def crearFitxer(self):
         """Creates a file next to __main__.py asking the name to the user
         """

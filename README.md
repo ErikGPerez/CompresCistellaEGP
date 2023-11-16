@@ -5,6 +5,15 @@ COMPRES CISTELLA DESARROLLADO POR ERIK GRANADO PÉREZ
 -------------------------------------------------
 # Update 1: First commit
  First commit. I'm using the last part of this same practice.
+
+# Update 2: Building code skull
+ I'm building my first steps to fill info on the programm.
+
+ 1. I've changed the Menu and Controller to another options
+ 2. I've put an extra file called "CCProducte". It's an Object to estructure the info product.
+
+ WHAT TO DO:
+  Initiate a List of products. Based on the exercise, I don't know if I have to create a file with products, or maybe init on memory and then save a file with the bill that the user has choosen.
 -------------------------------------------------
 # Exercise TODO
         Fes un programa que sigui estructurat amb objectes en Python que gestioni fitxers, ha de sortir un menú amb les opcions:

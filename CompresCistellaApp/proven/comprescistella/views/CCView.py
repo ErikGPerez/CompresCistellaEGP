@@ -1,6 +1,6 @@
-from CompresCistellaApp.proven.comprescistella.views.CCMenu import CCMenu
-from CompresCistellaApp.proven.comprescistella.model.CCModel import CCMenu
-from CompresCistellaApp.proven.comprescistella.controllers.CCController import *
+from proven.comprescistella.views.CCMenu import CCMenu
+from proven.comprescistella.model.CCModel import *
+from proven.comprescistella.controllers.CCController import *
 
 class CCView:
     def __init__(self, control, model):

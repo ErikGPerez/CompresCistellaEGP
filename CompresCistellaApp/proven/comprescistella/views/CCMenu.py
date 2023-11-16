@@ -7,8 +7,7 @@ class CCMenu(Menu):
     def __init__(self):
         super().__init__("--COMPRA CISTELLA MENU--")
         self.addOption(Option("Exit", "exit"))
-        self.addOption(Option("Crear fitxer", "crear_fitxer"))
-        self.addOption(Option("Llegir fitxer", "llegir_fitxer"))
-        self.addOption(Option("Escriure fitxer", "escriure_fitxer"))
-        self.addOption(Option("Esborrar fitxer", "esborrar_fitxer"))
+        self.addOption(Option("Comprar un producte", "comprar_producte"))
+        self.addOption(Option("Mostrar cistella de compra", "mostrar_cistella"))
+        self.addOption(Option("Generar factura", "generar_factura"))
         

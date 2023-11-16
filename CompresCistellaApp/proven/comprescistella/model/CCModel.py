@@ -1,6 +1,17 @@
 import os
+from proven.comprescistella.model.CCProducte import CCProducte
 
-class CCMenu:
+class CCModel: #TODO: Complete the model
+    
+    def __init__(self):
+        pass
+    
+    
+    def prova(self):
+        cosa = CCProducte(342, "Dildo", "Juguetes Sexuales", 23, 34.50)
+        print(cosa)
+    
+    ############# OTHER METHODS - CRUD #####################
     def createFile(self, filepath) -> bool:
         """Creates a file with the filepath str given
 
