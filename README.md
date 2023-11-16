@@ -14,6 +14,9 @@ COMPRES CISTELLA DESARROLLADO POR ERIK GRANADO PÉREZ
 
  WHAT TO DO:
   Initiate a List of products. Based on the exercise, I don't know if I have to create a file with products, or maybe init on memory and then save a file with the bill that the user has choosen.
+
+# Update 3: Added some improves
+ I did a better Menu and added another file class python "CCCistella". I was thinking about what to do, and doing a class where I can put a list of products with its unities and prices maybe sounds good to implement.
 -------------------------------------------------
 # Exercise TODO
         Fes un programa que sigui estructurat amb objectes en Python que gestioni fitxers, ha de sortir un menú amb les opcions:

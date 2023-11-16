@@ -23,7 +23,7 @@ class Menu:
         print("=============="+self.title+"================")
         idOption = 0
         for Option in self.options:
-            print(str(Option) + ": " + str(idOption))
+            print("[" + str(idOption) + "] " + str(Option))
             idOption += 1
         
     def getSelectedOption(self) -> int:
@@ -34,7 +34,8 @@ class Menu:
         """
         opt = -1
         try:
-            print("Select an Option: ")
+            print("----------------------")
+            print("Seleccciona una opció: ")
             opt = int(input())
             if opt < 0 or opt >= len(self.options):
                 opt = -1

@@ -8,4 +8,3 @@ class Main:
         control = CCController(model)
 
 main = Main()
-    
