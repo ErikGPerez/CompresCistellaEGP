@@ -12,6 +12,7 @@ class CCModel: #TODO: Complete the model
         print(cosa)
     
     ############# OTHER METHODS - CRUD #####################
+    
     def createFile(self, filepath) -> bool:
         """Creates a file with the filepath str given
 
@@ -27,7 +28,7 @@ class CCModel: #TODO: Complete the model
             cond = True
         return cond
     
-    def readFile(self, filepath) -> str:
+    def readFileUser(self) -> str:
         """Reads a file with the filepath str given
 
         Args:
@@ -37,9 +38,9 @@ class CCModel: #TODO: Complete the model
             str: Returns the text obtained with the read() option
         """
         try:
-            fileRead = open(filepath, "r").read()
+            fileRead = open("data/uspass.txt", "r").read()  
         except:
-            return ""
+            return "File not found"
             
         return fileRead
     

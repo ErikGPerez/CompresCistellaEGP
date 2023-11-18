@@ -19,6 +19,10 @@ class CCController:
         else:
             if action == "exit":
                 self.exitApplication()
+            if action == "identificacio":
+                self.identificacioUser()
+            if action == "registrarse":
+                self.registreUser()
             if action == "comprar_producte":
                 self.compraProducte()
             if action == "mostrar_cistella":
@@ -32,12 +36,31 @@ class CCController:
         """Quit the programm
         """
         quit()
+    
+    #### MENU USER ####
+
+    def identificacioUser(self):
+        usuari = self.view.showInputDialog("Usuari: ")
+        password = self.view.showInputDialog("Password: ")
         
+        user = self.model.readFileUser()
+        self.view.showMessage(user)
+        
+        if user != "File not found":
+            self.view.subMenu()
+    
+    def registreUser(self):
+        self.view.showMessage("NOT IMPLEMENTED cistella") #TODO  
+        self.view.subMenu()  
+    
+    
+    
+    #### MENU CISTELLA ####
+    
     def compraProducte(self):
         self.view.showMessage("NOT IMPLEMENTED compra") #TODO
         self.model.prova()
         
-    
     def mostraCistella(self):
         self.view.showMessage("NOT IMPLEMENTED cistella") #TODO
     
@@ -45,6 +68,7 @@ class CCController:
         self.view.showMessage("NOT IMPLEMENTED genera") #TODO
     
     ############################# OTHER ACTIVITY - CRUD #######################
+    
     def crearFitxer(self):
         """Creates a file next to __main__.py asking the name to the user
         """

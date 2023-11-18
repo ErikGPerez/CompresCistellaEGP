@@ -26,13 +26,16 @@ class CCView:
         if action != None:
             if action:
                 self.control.processRequest(action)
-    
+                
     def showTable(self, data):
         cont = 0
         for Object in data:
             print(Object)
             cont = cont + 1
         print(str(cont) + " Elements found")
+    
+    def subMenu(self):
+        self.menu.canviMenu()
         
     def crudForm(self, inputU):
         return inputU

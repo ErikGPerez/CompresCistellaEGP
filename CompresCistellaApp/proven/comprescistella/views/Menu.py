@@ -8,7 +8,7 @@ class Menu:
         self.options = list()
 
     def getOption(self, index):
-        return self.options.get(index)
+        return self.options.index(index)
 
     def addOption(self, Option) -> bool:
         return self.options.append(Option)
