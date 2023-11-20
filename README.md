@@ -17,6 +17,10 @@ COMPRES CISTELLA DESARROLLADO POR ERIK GRANADO PÉREZ
 
 # Update 3: Added some improves
  I did a better Menu and added another file class python "CCCistella". I was thinking about what to do, and doing a class where I can put a list of products with its unities and prices maybe sounds good to implement.
+
+# Update 4: Function register complete
+ I've done the function login and register at least. I'm not checking if the user and password already exists, so idk I will do it because of time basically 
+
 -------------------------------------------------
 # Exercise TODO
         Fes un programa que sigui estructurat amb objectes en Python que gestioni fitxers, ha de sortir un menú amb les opcions:

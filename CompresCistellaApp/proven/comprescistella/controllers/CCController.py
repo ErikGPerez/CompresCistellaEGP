@@ -43,17 +43,24 @@ class CCController:
         usuari = self.view.showInputDialog("Usuari: ")
         password = self.view.showInputDialog("Password: ")
         
-        user = self.model.readFileUser()
-        self.view.showMessage(user)
+        uspass = self.model.readFileUser()
+        self.view.showMessage(uspass)
         
-        if user != "File not found":
-            self.view.subMenu()
+        if uspass != "File not found":
+            if self.model.checkUser(usuari, password, uspass):
+                self.view.subMenu()
+            else:
+                self.view.showMessage("User and password not found!")
     
     def registreUser(self):
-        self.view.showMessage("NOT IMPLEMENTED cistella") #TODO  
-        self.view.subMenu()  
-    
-    
+        self.view.showMessage("--Fes el registre d'usuari--")
+        usuari = self.view.showInputDialog("Usuari: ")
+        password = self.view.showInputDialog("Password: ")
+        
+        if self.model.registerFileUser(usuari, password):
+            self.view.showMessage("T'has registrat!")
+        else:
+            self.view.showMessage("No t'has registrat")
     
     #### MENU CISTELLA ####
     
