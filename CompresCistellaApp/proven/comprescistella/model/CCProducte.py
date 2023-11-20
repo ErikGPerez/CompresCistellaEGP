@@ -22,6 +22,9 @@ class CCProducte: #TODO: Complete the Product constructor
     def mostraProducte(self) -> str:
         return ("Id: " + str(self.idP) + ", Nom: " + str(self.name) + ", Categoria: " + str(self.category) + ", Preu: " + str(self.price) +", Stock: " + str(self.stock))
     
+    def mostraProducteSenseStock(self) -> str:
+        return ("Id: " + str(self.idP) + ", Nom: " + str(self.name) + ", Categoria: " + str(self.category) + ", Preu: " + str(self.price))
+    
     def compraElProducte(self):
         """Sells the product to user
         """

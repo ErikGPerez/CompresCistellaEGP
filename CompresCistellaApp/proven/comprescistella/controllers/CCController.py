@@ -40,6 +40,8 @@ class CCController:
     #### MENU USER ####
 
     def identificacioUser(self):
+        """Identifies an user on the file uspass.txt inside the folder data
+        """
         usuari = self.view.showInputDialog("Usuari: ")
         password = self.view.showInputDialog("Password: ")
         
@@ -53,6 +55,8 @@ class CCController:
                 self.view.showMessage("User and password not found!")
     
     def registreUser(self):
+        """Register a new user on the file uspass.txt inside the folder data
+        """
         self.view.showMessage("--Fes el registre d'usuari--")
         usuari = self.view.showInputDialog("Usuari: ")
         password = self.view.showInputDialog("Password: ")
@@ -65,7 +69,10 @@ class CCController:
     #### MENU CISTELLA ####
     
     def compraProducte(self):
-        self.view.showMessage("--COMPRA UN PRODUCTE--") #TODO
+        """Buys a product. First, shows to user all the products. Then, user tries to
+        input a number id to choose a product. If valid, adds to the basket. Otherwise, does nothing.
+        """
+        self.view.showMessage("--COMPRA UN PRODUCTE--")
         listPr = self.model.showProducts()
         count = 0
         for p in listPr:
@@ -75,55 +82,25 @@ class CCController:
         if option != "quit":
             try:
                 optionN = int(option)
-                self.model.addBasket(listPr[option])
+                self.model.addBasket(listPr[optionN])
             except: 
                 self.view.showMessage("Error en la entrada de la opció")
         
     def mostraCistella(self):
-        self.view.showMessage("NOT IMPLEMENTED cistella") #TODO
+        """Shows the basket with a list of the products
+        """
+        self.view.showMessage(self.model.showBasket())
     
     def generaFactura(self):
-        self.view.showMessage("NOT IMPLEMENTED genera") #TODO
-    
-    ############################# OTHER ACTIVITY - CRUD #######################
-    
-    def crearFitxer(self):
-        """Creates a file next to __main__.py asking the name to the user
+        """Generates a bill on the data folder
         """
-        filepath = self.view.showInputDialog("Nom del nou arxiu: ")
-        if self.model.createFile(filepath):
-            self.view.showMessage("L'arxiu " + filepath + " s'ha creat correctament")
+        self.view.showMessage("Generant Factura...")
+        if self.model.generateBill():
+            self.view.showMessage("Factura generada")
         else:
-            self.view.showMessage("L'arxiu " + filepath + " no s'ha creat")
-            
-    def llegirFitxer(self):
-        """Reads a file using File object giving the filepath to the model and returning the String
-        """
-        filepath = self.view.showInputDialog("Nom del arxiu a llegir: ")
-        fileRead = self.model.readFile(filepath)
-        if fileRead != "":
-            self.view.showMessage("Arxiu " + filepath)
-            self.view.showMessage(fileRead)
-        else:
-            self.view.showMessage("Arxiu vuit o no s'ha trobat")
-    
-    def escriureFitxer(self):
-        """Appends text if found or creates a file with text that previously was asked to user and displays what happenned
-        """
-        filepath = self.view.showInputDialog("Nom del arxiu per escriure: ")
-        text: str = self.view.showInputDialog("Quin missatge vols posar?: ")
-        done = self.model.writeFile(filepath, text)
-        if done == False:
-            self.view.showMessage("No s'ha pogut fer l'operació")
-        else:
-            self.view.showMessage("Arxiu " + filepath)
-            self.view.showMessage(self.model.readFile(filepath))
-    
-    def esborrarFitxer(self):
-        """Removes a file on the path relative to __main__.py and shows to user if It was done
-        """
-        filepath = self.view.showInputDialog("Nom del arxiu per esborrar: ")
-        if self.model.removeFile(filepath):
-            self.view.showMessage("L'arxiu " + filepath + " s'ha esborrat correctament")
-        else:
-            self.view.showMessage("L'arxiu " + filepath + " no s'ha esborrat")
+            self.view.showMessage("Factura no generada")
+        
+        opt = self.view.showInputDialog("Vols esborrar la cistella actual?: (y/n)")
+        if opt == "y":
+            self.model.removeCistella()
+        

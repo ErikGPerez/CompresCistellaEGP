@@ -24,6 +24,9 @@ COMPRES CISTELLA DESARROLLADO POR ERIK GRANADO PÉREZ
 # Update 5: Added funcitons on login and added model things
  Since I don't have so much time, I'm trying to rush the content and implement the must have methods in model. App can read a file with products for now.
 
+# Update 6: Final update?
+ I'm tired and I don't have time. So, this is the final update. I'm sorry
+ 
 -------------------------------------------------
 # Exercise TODO
         Fes un programa que sigui estructurat amb objectes en Python que gestioni fitxers, ha de sortir un menú amb les opcions:

@@ -1,22 +1,59 @@
 import os
 from proven.comprescistella.model.CCProducte import CCProducte
+from proven.comprescistella.model.CCCistella import CCCistella
 
-class CCModel: #TODO: Complete the model
+class CCModel:
     
     def __init__(self):
         self.listProducts = list()
+        self.cistella = CCCistella()
     
-    def showProducts(self):          
+    def showProducts(self):
+        """Shows the products
+        """          
         return self.listProducts
     
     def showBasket(self):
-        cosa = CCProducte(342, "Platano", "Fruta", 2.3, 26)
-        print(cosa.mostraProducte())
+        """Shows the basket
+
+        Returns:
+            str: String of the product list
+        """
+        return self.cistella
     
-    def addBasket(self):
-        pass
+    def addBasket(self, producte):
+        """Adds a Product on a basket
+
+        Args:
+            producte (CCProducte): Given producte chosen on controller
+        """
+        self.cistella.addProdcute(producte)
+        
+    def generateBill(self):
+        """Creates a file with the filepath str given
+
+        Args:
+            filepath (str): Text of the filepath to create a file
+
+        Returns:
+            bool: True if added, otherwise False
+        """
+        script_dir = os.path.dirname(__file__)
+        try:
+            fileWrite = open(script_dir + "/data/factura.txt", "w")
+            fileWrite.write(self.cistella.getFactura())
+            return True
+        except:
+            return False
+        
+    def removeCistella(self):
+        """removes on the memory the list of cistella
+        """
+        self.cistella.emptyCistella()
         
     def loadProducts(self):
+        """Load the products on the pruducts.txt data
+        """
         script_dir = os.path.dirname(__file__)
         fileRead = open(script_dir + "/data/products.txt", "r").read()
         listProductsText = fileRead.strip().split(":")
@@ -29,12 +66,8 @@ class CCModel: #TODO: Complete the model
             finalProduct.category = product[2]
             finalProduct.price = float(product[3])
             finalProduct.stock = float(product[4])
-            print(finalProduct.mostraProducte())
-            self.listProducts.append(finalProduct)
-                     
-               
+            self.listProducts.append(finalProduct)             
             
-    
     ##################### USER METHODS #####################
     
     def registerFileUser(self, user, password) -> bool:
@@ -84,6 +117,5 @@ class CCModel: #TODO: Complete the model
             return True
         else:
             return False
-    
     
     ####################################################

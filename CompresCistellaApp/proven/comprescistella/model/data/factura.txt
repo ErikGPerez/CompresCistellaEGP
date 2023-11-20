@@ -1,0 +1,5 @@
+----===FACTURA COMPRA CISTELLA===----
+Id: 2, Nom: Taronja, Categoria: Fruita, Preu: 1.8
+Id: 3, Nom: Plàtan, Categoria: Fruita, Preu: 1.5
+Id: 4, Nom: Síndria, Categoria: Fruita, Preu: 5.0
+Total: 8.3
