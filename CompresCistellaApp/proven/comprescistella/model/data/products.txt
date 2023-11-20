@@ -1,0 +1,25 @@
+001,Poma,Fruita,2.3,46:
+002,Taronja,Fruita,1.8,32:
+003,Plàtan,Fruita,1.5,25:
+004,Síndria,Fruita,5.0,10:
+005,Kiwi,Fruita,0.2,60:
+006,Tomàquet,Verdura,0.1,75:
+007,Broquil,Verdura,0.5,40:
+008,Enciam,Verdura,0.3,50:
+009,Carbassó,Verdura,0.8,30:
+010,Ceba,Verdura,0.4,55:
+011,Llet,Làctic,1.0,20:
+012,Formatge,Làctic,0.2,15:
+013,Iogurt,Làctic,0.3,25:
+014, Mantega,Làctic,0.5,10:
+015,Formatge cremós,Làctic,0.3,18:
+016,Pollastre,Carn,2.5,12:
+017,Llom porc,Carn,1.8,15:
+018,Filet vedella,Carn,2.0,10:
+019,Salsitxes,Carn,0.6,30:
+020,Peix salmó,Carn,1.2,22:
+021,Llobarro,Peix,1.5,18:
+022,Gambes,Peix,0.7,40:
+023,Sèpia,Peix,0.9,35:
+024,Orada,Peix,1.3,20:
+025,Sardines,Peix,0.1,50

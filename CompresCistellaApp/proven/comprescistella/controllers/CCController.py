@@ -44,10 +44,10 @@ class CCController:
         password = self.view.showInputDialog("Password: ")
         
         uspass = self.model.readFileUser()
-        self.view.showMessage(uspass)
         
         if uspass != "File not found":
             if self.model.checkUser(usuari, password, uspass):
+                self.model.loadProducts()
                 self.view.subMenu()
             else:
                 self.view.showMessage("User and password not found!")
@@ -65,8 +65,19 @@ class CCController:
     #### MENU CISTELLA ####
     
     def compraProducte(self):
-        self.view.showMessage("NOT IMPLEMENTED compra") #TODO
-        self.model.prova()
+        self.view.showMessage("--COMPRA UN PRODUCTE--") #TODO
+        listPr = self.model.showProducts()
+        count = 0
+        for p in listPr:
+            self.view.showMessage("[" + str(count) + "] " + p.mostraProducte())
+            count += 1
+        option = self.view.showInputDialog("Quin producte vols?: ([number] or [quit])")    
+        if option != "quit":
+            try:
+                optionN = int(option)
+                self.model.addBasket(listPr[option])
+            except: 
+                self.view.showMessage("Error en la entrada de la opció")
         
     def mostraCistella(self):
         self.view.showMessage("NOT IMPLEMENTED cistella") #TODO

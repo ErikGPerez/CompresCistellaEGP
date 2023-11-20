@@ -12,3 +12,5 @@ class CCCistella:
         self.listProducte.append(CCProducte)
         
     
+        
+    

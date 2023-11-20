@@ -21,6 +21,9 @@ COMPRES CISTELLA DESARROLLADO POR ERIK GRANADO PÉREZ
 # Update 4: Function register complete
  I've done the function login and register at least. I'm not checking if the user and password already exists, so idk I will do it because of time basically 
 
+# Update 5: Added funcitons on login and added model things
+ Since I don't have so much time, I'm trying to rush the content and implement the must have methods in model. App can read a file with products for now.
+
 -------------------------------------------------
 # Exercise TODO
         Fes un programa que sigui estructurat amb objectes en Python que gestioni fitxers, ha de sortir un menú amb les opcions:
